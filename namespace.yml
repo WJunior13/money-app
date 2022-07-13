@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: money-app
+  labels:
+    name: money-app
+    istio-injection: enabled
