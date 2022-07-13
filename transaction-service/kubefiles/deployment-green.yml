@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transaction-app-green
+  namespace: money-app
+  labels:
+    version: green
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: transaction-app
+      namespace: money-app
+  template:
+    metadata:
+      labels:
+        app: transaction-app
+        namespace: money-app
+        version: green
+    spec:
+      containers:
+        - name: transaction-app
+          image: wesleyfuchter/transaction-service:green
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
