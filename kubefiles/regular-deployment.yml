@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: transactions-app
-          image: wesleyfuchter/transaction-service:v1
+          image: jedisonvieira/transaction-service:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
@@ -82,7 +82,7 @@ spec:
     spec:
       containers:
         - name: balance-app
-          image: wesleyfuchter/balance-service:v1
+          image: jedisonvieira/balance-service:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
