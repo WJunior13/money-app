@@ -1,0 +1,6 @@
+com\jedisonvieira\balanceservice\Balances.class
+com\jedisonvieira\balanceservice\Transaction.class
+com\jedisonvieira\balanceservice\Balance.class
+com\jedisonvieira\balanceservice\TransactionsReceiver.class
+com\jedisonvieira\balanceservice\BalanceServiceApplication.class
+com\jedisonvieira\balanceservice\BalanceController.class
