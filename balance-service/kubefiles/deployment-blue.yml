@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: balance-app
-          image: jedisonvieira/balance-service:blue
+          image: wjcarrer/balance-service:blue
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

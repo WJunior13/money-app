@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: transaction-app
-          image: jedisonvieira/transaction-service:blue
+          image: wjcarrer/transaction-service:blue
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
