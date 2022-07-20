@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clientes-app-green
+  namespace: money-app
+  labels:
+    version: green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clientes-app
+      namespace: money-app
+  template:
+    metadata:
+      labels:
+        app: clientes-appp
+        namespace: money-app
+        version: green
+    spec:
+      containers:
+        - name: clientes-app
+          image: wjcarrer/clientes-service:green
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081

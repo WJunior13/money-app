@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: clientes-service-stage-green
+  namespace: money-app
+spec:
+  gateways:
+    - money-app-gateway
+  hosts:
+    - "*"
+  http:
+    - match:
+      - uri:
+          prefix: /clientes-service
+      route:
+      - destination:
+          host: clientes-service
+          port:
+            number: 8081
+          subset: blue
+        weight: 30
+      - destination:
+          host: clientes-service
+          port:
+            number: 8081
+          subset: green
+        weight: 70
+    
