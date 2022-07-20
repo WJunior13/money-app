@@ -1,5 +1,5 @@
 # MONEY-APP 
-###Projeto de microserviços para movimentações bancárias
+### Projeto de microserviços para movimentações bancárias
 
 ## Gerando imagens docker
 executar o arquivo **docker-compose.yml** no diretorio raiz do projeto para criar as imagens gerais do projeto.
