@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: migration-money-app
+  namespace: money-app
+spec:
+  ports:
+    - port: 8090
+      targetPort: 8090
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: migration-app
+    namespace: money-app
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: migration-app
+  namespace: money-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: migration-app
+      namespace: money-app
+  template:
+    metadata:
+      labels:
+        app: migration-app
+        namespace:  money-app
+    spec:
+      containers:
+        - name: migration-app
+          image: wjcarrer/migration-app:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8090
